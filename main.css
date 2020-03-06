@@ -1,0 +1,101 @@
+html {
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    background-color: #E8D5D5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-size: 16px;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+nav #topnav {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+#topnav a {
+    float: left;
+    display: block;
+    color: #E85668;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+#topnav a:hover {
+    background-color: #E85668;
+    color: #333;
+}
+#topnav a.active {
+    background-color: #E85668;
+    color: #fff;
+}
+header.main {
+    margin-top: 50px;
+}
+header.main h1, header.main p {
+    text-align: center;
+}
+.container {
+    color: #333;
+    position: absolute;
+    left: 50%;
+    width: 1024px;
+    margin-left: -512px;
+    background-color: #fff;
+    border-bottom: 10px solid #E85668;
+}
+.month {
+    width: 100%;
+}
+h4 {
+    font-weight: normal;
+    padding: 3px 7px;
+    border-bottom: 1px solid #E85668;
+    letter-spacing: 2px;
+}
+.column {
+    background-color: #fff;
+    height: 300px;
+    float: left;
+    width: 33.3%;
+    margin-bottom: 10px;
+}
+.diamond {
+    width: 200px;
+    height: 200px;
+    margin: 45px auto;
+    border: 2px solid #E85668;
+    transform: rotate(-45deg);
+    overflow: hidden;
+}
+.task-title {
+    background-color: #FF727299;
+    width: 100%;
+    font-size: 22px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    transform: rotate(45deg);
+}
+.task-date {
+    font-size: 12px;
+    margin-left: 5px;
+}
+.diamond:hover {
+    -webkit-animation: spin 0.4s linear;
+    animation: spin 0.4s linear;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(-45deg); }
+    100% { -webkit-transform: rotate(315deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(-45deg); }
+    100% { transform: rotate(315deg); }
+}
