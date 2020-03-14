@@ -33,20 +33,34 @@
     <button class='accordion'>março</button>
     <article class='panel'>
       <article class='column'>
-        <div class='diamond'>
-          <header class='task-title'>
-            TASK 04
-          </header>
-          <span class='task-date'>27 - 02 - 2020</span>
-        </div>
+        <a href='mar/task05.html'>
+          <div class='diamond'>
+            <header class='task-title'>
+              TASK 05
+            </header>
+            <span class='task-date'>12 - 03 - 2020</span>
+          </div>
+        </a>
       </article>
       <article class='column'>
-        <div class='diamond'>
-          <header class='task-title'>
-            TASK 03
-          </header>
-          <span class='task-date'>27 - 02 - 2020</span>
-        </div>
+        <a href='mar/task04.html'>
+          <div class='diamond'>
+            <header class='task-title'>
+              TASK 04
+            </header>
+            <span class='task-date'>10 - 03 - 2020</span>
+          </div>
+        </a>
+      </article>
+      <article class='column'>
+        <a href='mar/task03.html'>
+          <div class='diamond'>
+            <header class='task-title'>
+              TASK 03
+            </header>
+            <span class='task-date'>05 - 03 - 2020</span>
+          </div>
+        </a>
       </article>
       <article class='column'>
         <a href='mar/task02.html'>
@@ -59,7 +73,7 @@
         </a>
       </article>
     </article>
-    <button class='accordion'>fevereiro</button>
+    <button class='accordion acc-feb'>fevereiro</button>
     <article class='panel'>
       <a href='feb/task01.html'>
         <div class='diamond'>
@@ -72,6 +86,12 @@
     </article>
   </section>
   <script type="text/javascript" src="./js/script.js"></script>
+  <script>
+    /* mês atual sempre começa ativo */
+    accordions[0].classList.toggle('active');
+    let curMonthPanel = accordions[0].nextElementSibling;
+    curMonthPanel.style.display = 'block';
+  </script>
 </body>
 
 </html>
