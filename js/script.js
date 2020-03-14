@@ -1,13 +1,15 @@
 
 let topnav = document.getElementById('topnav');
-let sticky = topnav.offsetTop;
-window.onscroll = () => {
-  if (window.pageYOffset >= sticky) {
-    topnav.classList.add('sticky');
-  } else {
-    topnav.classList.remove('sticky');
-  }
-};
+if (topnav) {
+  let sticky = topnav.offsetTop;
+  window.onscroll = () => {
+    if (window.pageYOffset >= sticky) {
+      topnav.classList.add('sticky');
+    } else {
+      topnav.classList.remove('sticky');
+    }
+  };
+}
 
 let accordions = document.getElementsByClassName('accordion');
 for (let i = 0; i < accordions.length; i++) {
