@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MAMI 2020.1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Sen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class='main'>
+    <a name='top'><h1>MAMI 2020.1</h1></a>
+    <p>Página dedicada a expor as atividades referentes à cadeira de Matemática Aplicada à Multimídia I (noturno) do
+      curso de Sistemas e Mídias Digitais da UFC.</p>
+  </header>
+  <nav id='topnav'>
+    <a href="../index.html">Início</a><a href="../summary.html" class="active">Sumário</a><a
+      href="../contact.html">Contato</a>
+  </nav>
+  <section class="container">
+    <ul class='breadcrumb'>
+      <li><a href='../summary.html'>Sumário</a></li>
+      <li><a>Março</a></li>
+      <li><a>Atividade 03</a></li>
+    </ul>
+    <blockquote>
+      Discutir e justificar o uso de funções em um modelo computacional que, empregando a instrução box() do Processing, demonstra graficamente que o cubo é o paralelepípedo que apresenta o melhor aproveitamento de volume.
+    </blockquote>
+    <p>Dado um limite para o tamanho das dimensões de um paralelepípedo, a seguinte função serve para demonstrar que, dentre os paralelepípedos possíveis com as dimensões somando 36 (valor para trabalhar números inteiros e um possível cubo), o que tem o maior volume possível é o cubo:</p>
+    <div class='code-box'>
+      <p>
+        <span class='code-comment'>//a menor soma possível de duas dimensões é 2
+        <br />//logo a maior dimensão possível é 34</span>
+        <br /><span class='code-type-var'>float</span> <span class='code-var'>limite</span> = 34.0;
+        <br /><span class='code-type-var'>float</span> c = limite;
+        <br /><span class='code-type-var'>float</span> h = 1.0;
+        <br /><span class='code-type-var'>float</span> l = 1.0;
+        <br /><span class='code-type-var'>boolean</span> condParada = <span class='code-reserved-word'>false</span>;
+        <br /><span class='code-type-var'>float</span> maiorVolCombinacao[] = <span class='code-reserved-word'>new</span> <span class='code-type-var'>float</span>[3];<span class='code-comment'>//[c, h, l]</span>
+        <br /><span class='code-type-var'>float</span> maiorVolume = 0;
+        <br /><span class='code-type-var'>float</span> volAtual;
+      </p>
+      <p>
+        <span class='code-type-var'>void</span> mostraSoma(<span class='code-type-var'>float</span> a, <span class='code-type-var'>float</span> b, <span class='code-type-var'>float</span> c) {
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>print</span>(<span class='code-str'>"Soma dos lados = "</span>);
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>println</span>(a + b + c);
+        <br />}
+      </p>
+      <p>
+        <span class='code-reserved-word'>void</span> mostraVariaveis(<span class='code-type-var'>float</span> c, <span class='code-type-var'>float</span> h, <span class='code-type-var'>float</span> l) {
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>print</span>(<span class='code-str'>"c = "</span>);
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>print</span>(c);
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>print</span>(<span class='code-str'>". h = "</span>);
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>print</span>(h);
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>print</span>(<span class='code-str'>". l = "</span>);
+          <br />
+          <span class='ident-space'></span>
+          <span class='code-fn'>println</span>(l);
+          <br />
+          <span class='ident-space'></span>
+          mostraSoma(c, h, l);
+        <br />}
+      </p>
+      <p>
+        <span class='code-type-var'>float</span> calculaVolume(<span class='code-type-var'>float</span> a, <span class='code-type-var'>float</span> b, <span class='code-type-var'>float</span> c) {
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-type-var'>float</span> vol = a * b * c;
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-fn'>print</span>(<span class='code-str'>"Volume = "</span>);
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-fn'>println</span>(vol);
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-reserved-word'>return</span> vol;
+        <br/>}
+      </p>
+      <p>
+        <span class='code-reserved-word'>void</span> checkVolume(<span class='code-type-var'>float</span> a, <span class='code-type-var'>float</span> b, <span class='code-type-var'>float</span> c) {
+          <br/>
+          <span class='ident-space'></span>
+          volAtual = calculaVolume(a, b, c);
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-control'>if</span> (volAtual > maiorVolume) {
+            <br/>
+          <span class='ident-space'></span>
+          <span class='ident-space'></span>
+          maiorVolume = volAtual;
+          <br/>
+          <span class='ident-space'></span>
+          <span class='ident-space'></span>
+          maiorVolCombinacao[0] = a;
+          <br/>
+          <span class='ident-space'></span>
+          <span class='ident-space'></span>
+          maiorVolCombinacao[1] = b;
+          <br/>
+          <span class='ident-space'></span>
+          <span class='ident-space'></span>
+          maiorVolCombinacao[2] = c;
+          <br/>
+          <span class='ident-space'></span>
+          }
+        <br/>}
+      </p>
+      <p>
+        <span class='code-reserved-word'>void</span> desenha(<span class='code-type-var'>float</span> a, <span class='code-type-var'>float</span> b, <span class='code-type-var'>float</span> c) {
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-fn'>background</span>(255);
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-fn'>noFill</span>();
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-fn'>box</span>(a, b, c);
+        <br/>}
+      </p>
+      <p>
+        <span class='code-reserved-word'>void</span> <span class='code-declared-fn'>setup</span>() {
+          <span class='code-fn'>size</span>(255,255,P3D);
+        }
+      </p>
+      <p>
+        <span class='code-reserved-word'>void</span> <span class='code-declared-fn'>draw</span>() {
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-fn'>translate</span>(125,125,0);
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-fn'>rotateY</span>(0.25);
+          <br/>
+          <span class='ident-space'></span>
+          <span class='code-control'>if</span> (!condParada) {
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            <span class='code-control'>if</span> (c == 1) {
+              condParada = <span class='code-reserved-word'>true</span>;
+            }
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            <span class='code-fn'>desenha</span>(c, h2, l2);
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            mostraVariaveis(c, h, l);
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            checkVolume(c, h, l);
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            <span class='code-control'>if</span> (h + l > 2.0) {
+              <br/>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='code-type-var'>float</span> l2 = l;
+              <br/>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='code-control'>for</span> (<span class='code-type-var'>float</span> h2 = h - 1;h2 > 0;h2--) {
+                <br/>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                l2++;
+                <br/>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='code-fn'>desenha</span>(c, h2, l2);
+                <br/>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                mostraVariaveis(c, h2, l2);
+                <br/>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                checkVolume(c, h2, l2);
+                <br/>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+                <span class='ident-space'></span>
+              }
+              <br/>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+            }
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            c--;
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            h++;
+            <br/>
+            <span class='ident-space'></span>
+            <span class='ident-space'></span>
+            <span class='code-control'>if</span> (condParada) {
+              <br/>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='code-fn'>print</span>(<span class='code-str'>"O maior volume registrado é: "</span>);
+              <br/>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='code-fn'>println</span>(maiorVolume);
+              <br/>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='code-fn'>print</span>(<span class='code-str'>"Com os lados: "</span>);
+              <br/>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              <span class='ident-space'></span>
+              mostraVariaveis(maiorVolCombinacao[0], maiorVolCombinacao[1], maiorVolCombinacao[2]); <span class='code-comment'>//sanity</span>
+          <br/>
+          <span class='ident-space'></span>
+          <span class='ident-space'></span>}
+          <br />
+          <span class='ident-space'></span>}
+        <br />}
+      </p>
+    </div>
+    <p>O código acima mostra todas as combinações possíveis para as três dimensões, no final mostrando qual delas têm o maior volume, nos confirmando que é o cubo 12³:</p>
+    <div class='code-box'>
+      <span class='code-comment'>//Output:</span>
+      <br />O maior volume registrado é: 1728.0
+      <br />Com os dados: c = 12.0 h = 12.0 l = 12.0
+      <br />Soma dos lados = 36.0
+    </div>
+    <p>Mas o importante aqui é o seguinte: É possível verificar que existem funções se repetindo dentro do escopo da função <strong>draw</strong>. Isso se dá pelo fato de organização. Olhando a declaração das funções, é notável que várias linhas de código acabaram virando apenas uma: a chamada da função; Essa tática de transformar sequências repetitivas de instruções em funções torna o código mais legível. Não só isso, mas qualquer sequência de instruções que tenha uma ação bem definida pode (e até deve) ser transformada em função.</p>
+    <p>
+      Para dar maior legibilidade para alguém que não tenha tanto conhecimento das funções prontas do Processing/Java, ainda poderíamos transformar o trecho:
+    </p>
+    <div class='code-box'>
+      <span class='code-fn'>translate</span>(125,125,0);
+      <br /><span class='code-fn'>rotateY</span>(0.25);
+    </div>
+    <p>
+      Numa função chamada <em>movimentaDesenho</em>; Assim:
+    </p>
+    <div class='code-box'>
+      <span class='code-comment'>//Declaração</span>
+      <br>
+      <span class='code-reserved-word'>void</span> movimentaDesenho() {
+        <br/>
+        <span class='ident-space'></span>
+        <span class='code-fn'>translate</span>(125,125,0)
+        <br/>
+        <span class='ident-space'></span>
+        <span class='code-fn'>rotateY</span>(0.25)
+      <br/>}
+    </div>
+    <div class='code-box'>
+      <span class='code-comment'>//Chamada em draw()</span>
+      <br />movimentaDesenho();
+    </div>
+    <p>É possível ainda dar mais usabilidade para a nossa nova função, declarando variáveis a serem passadas para as funções internas, alterando assim o comportamento dela.</p>
+    <p>Com o que foi apresentado nesse post, concluímos que funções servem principalmente para deixar o código mais legível e organizado, além de poupar linhas. Ainda acrescento que não há regras e que cada programador poderá abstrair de uma forma diferente para sua criação.</p>
+  </section>
+  <footer id='backToTop'>
+    <a href='#top'>
+      <button>
+        <div class='arrow-top'></div>
+      </button>
+    </a>
+  </footer>
+  <script type="text/javascript" src="../js/script.js"></script>
+</body>
+
+</html>
