@@ -23,14 +23,3 @@ for (let i = 0; i < accordions.length; i++) {
     });
 }
 
-function readMore(pt) {
-  let more = document.getElementById('more-' + pt);
-  let btn = document.getElementById(pt);
-  if (!more.style.display || more.style.display == 'none') {
-    more.style.display = 'block';
-    btn.innerHTML = '-';
-  } else {
-    more.style.display = 'none';
-    btn.innerHTML = '+';
-  }
-}

@@ -101,6 +101,19 @@
       </button>
     </a>
   </footer>
+  <script>
+    function readMore(pt) {
+      let more = document.getElementById('more-' + pt);
+      let btn = document.getElementById(pt);
+      if (!more.style.display || more.style.display == 'none') {
+        more.style.display = 'block';
+        btn.innerHTML = '-';
+      } else {
+        more.style.display = 'none';
+        btn.innerHTML = '+';
+      }
+    }
+  </script>
   <script type="text/javascript" src="../js/script.js"></script>
 </body>
 
