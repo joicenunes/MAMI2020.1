@@ -113,6 +113,10 @@ section.container {
   margin-left: -315px;
   margin-bottom: 25px;
 }
+em.stroke {
+  text-decoration: line-through;
+  font-style: normal;
+}
 .accordion {
   width: 100%;
   cursor: pointer;
@@ -170,6 +174,7 @@ ul.breadcrumb {
   background-color: #f3e2e2
 }
 ul.breadcrumb li {
+  font-variant: small-caps;
   display: inline;
 }
 ul.breadcrumb li + li:before {
@@ -188,7 +193,8 @@ h4.task02 {
   letter-spacing: 2px;
   position: relative;
   padding-top: 5px;
-  border-bottom: 1px solid #b82626
+  border-bottom: 1px solid #b82626;
+  font-variant: small-caps;
 }
 #more-task02-pt1, #more-task02-pt2 {
   display: none;
@@ -216,6 +222,14 @@ ul.bullet li:before {
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+}
+.mod-mat-fn {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10px auto;
+  padding: 5px 10px;
+  background-color: #ddd;
+  width: fit-content;
+  max-width: 300px;
 }
 .code-box {
   padding: 10px 12px 10px 16px;
