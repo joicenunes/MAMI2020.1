@@ -16,7 +16,11 @@ html, body {
 }
 a {
   text-decoration: none;
-  color: inherit;
+  letter-spacing: 1px;
+  color: #b82626;
+}
+a:hover {
+  opacity: 0.5;
 }
 .mainpage {
   position: relative;
